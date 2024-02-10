@@ -22,7 +22,16 @@ const AllCards = () => {
         {cards.items.slice(startIndex, endIndex).map((card) => {
           return (
             <Grid key={card.name} item xs={2} sm={4} md={4}>
-              <Champion name={card.name} rarity={card.rarity} />
+              <Champion
+                name={card.name}
+                rarity={card.rarity}
+                img={
+                  card.iconUrls.evolutionMedium
+                    ? card.iconUrls.evolutionMedium
+                    : card.iconUrls.medium
+                }
+                icon={card.iconUrls.medium}
+              />
             </Grid>
           );
         })}

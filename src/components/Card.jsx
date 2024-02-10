@@ -12,12 +12,14 @@ import {
 
 const Champion = (props) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300, height: 650, padding: 2 }} elevation={6}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: "red" }} aria-label="recipe">
-            R
-          </Avatar>
+          <Avatar
+            sx={{ bgcolor: "red" }}
+            aria-label="avatar"
+            src={props.icon}
+          ></Avatar>
         }
         action={
           <IconButton aria-label="settings">
@@ -29,9 +31,10 @@ const Champion = (props) => {
       />
       <CardMedia
         component="img"
-        height="194"
-        image="/static/images/cards/paella.jpg"
+        height="60%"
+        image={props.img}
         alt="Paella dish"
+        sx={{ objectFit: "cover" }}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
